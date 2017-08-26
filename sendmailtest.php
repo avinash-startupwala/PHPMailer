@@ -4,7 +4,7 @@ $mail = new PHPMailer;
 $mail->setFrom('avinashpawar059@gmail.com', 'Avinash Pawar');
 $mail->addAddress('avinash.pawar@startupwala.com', 'My Friend');
 $mail->IsSMTP();
-$mail->Host = "smtp.example.com";
+$mail->Host = "smtp.gmail.com";
 $mail->Subject  = 'First PHPMailer Message';
 $mail->Body     = 'Hi! This is my first e-mail sent through PHPMailer.';
 if(!$mail->send()) {
