@@ -1,8 +1,9 @@
 <?php
 require 'PHPMailerAutoload.php';
 require ("class.phpmailer.php");
+ require_once('class.smtp.php');
 
-$mail = new PHPMailer();  // create a new object
+$mail = new PHPMailer(true);  // create a new object
     $mail->IsSMTP(); // enable SMTP
     $mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
     $mail->SMTPAuth = true;  // authentication enabled
