@@ -1,5 +1,5 @@
 
-
+<?php
 $mail = new PHPMailer(); // create a new object
 $mail->IsSMTP(); // enable SMTP
 $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
@@ -20,3 +20,4 @@ $mail->AddAddress("avinash.pawar@startupwala.com");
  } else {
     echo "Message has been sent";
  }
+?>
