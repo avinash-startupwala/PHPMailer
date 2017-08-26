@@ -1,5 +1,6 @@
 <?php
 require 'PHPMailerAutoload.php';
+require ("class.phpmailer.php");
 
 $mail = new PHPMailer();  // create a new object
     $mail->IsSMTP(); // enable SMTP
