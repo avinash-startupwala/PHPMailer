@@ -3,7 +3,7 @@ require 'PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $mail->setFrom('avinashpawar059@gmail.com', 'Avinash Pawar');
 $mail->addAddress('avinash.pawar@startupwala.com', 'My Friend');
-$mail->IsSMTP();
+//$mail->IsSMTP();
 $mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
 $mail->Username = 'avinashpawar059@gmail.com';
