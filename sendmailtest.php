@@ -1,36 +1,26 @@
 <?php
 require 'PHPMailerAutoload.php';
 
-$mail = new PHPMailer;
+$mail = new PHPMailer();  // create a new object
+    $mail->IsSMTP(); // enable SMTP
+    $mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true;  // authentication enabled
+    $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
+    $mail->SMTPAutoTLS = false;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'avinashpawar059@gmail.com';                 // SMTP username
-$mail->Password = 'Myyahoo321';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;                                    // TCP port to connect to
-
-$mail->setFrom('avinashpawar059@gmail.com', 'Mailer');
-$mail->addAddress('avinash.pawar@startupwala.com', 'Joe User');     // Add a recipient
-$mail->addAddress('avinash.pawar@startupwala.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
-
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
-}
+    $mail->Username = 'avinashpawar059@gmail.com';  
+    $mail->Password = 'Myyahoo321';           
+    $mail->SetFrom('avinashpawar059@gmail.com', 'Avinash Pawar');
+    $mail->Subject = 'Regarding PHP Mailer Test';
+    $mail->Body = 'Kindly check is it working or not';
+    $mail->AddAddress('cooldudester7276@gmail.com');
+    if(!$mail->Send()) {
+        $error = 'Mail error: '.$mail->ErrorInfo; 
+        return false;
+    } else {
+        $error = 'Message sent!';
+        return true;
+    }
+?>
