@@ -13,7 +13,7 @@ $mail->Password = 'Myyahoo321';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('cooldudester7276@gmail.com', 'Mailer');
+$mail->setFrom('avinashpawar059@gmail.com', 'Mailer');
 $mail->addAddress('avinash.pawar@startupwala.com', 'Joe User');     // Add a recipient
 $mail->addAddress('avinash.pawar@startupwala.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
